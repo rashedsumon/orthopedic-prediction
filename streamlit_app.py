@@ -8,7 +8,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🦴 Biomechanical Orthopedic Classifier")
+st.title("🦴 Biomechanical Orthopedic Prediction")
 st.write("This application utilizes Machine Learning to classify spine conditions into **Normal**, **Disk Hernia**, or **Spondylolisthesis** based on biomechanical patient features.")
 
 # Cache the model training process so it doesn't retrain on every slider adjustment
@@ -20,9 +20,7 @@ with st.spinner("Downloading dataset and training AI model..."):
     model, scaler, accuracy = get_trained_model()
 
 # Sidebar metric dashboard
-st.sidebar.header("Model Performance")
-st.sidebar.metric(label="Model Accuracy", value=f"{accuracy * 100:.2f}%")
-st.sidebar.write("Algorithm: Random Forest Classifier")
+
 
 # User Input Form
 st.header("Patient Biomechanical Measurements")
